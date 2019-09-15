@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/", (req, res) => {
-  res.send("Serve on.");
+  res.send("Server on.");
 });
 
 app.post("/sent", (req, res) => {
