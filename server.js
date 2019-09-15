@@ -14,8 +14,7 @@ app.post("/sent", (req, res) => {
     port: 465,
     auth: {
       user: "apikey",
-      pass:
-        "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"
+      pass: process.env.EMAIL_PASSWORD
     }
   });
 
