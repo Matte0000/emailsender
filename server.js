@@ -9,9 +9,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/", (req, res) => {
-  if (res.status === "503") {
-    return res.send("Server Down");
-  }
   res.send("Server on.");
 });
 
