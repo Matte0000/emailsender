@@ -8,10 +8,6 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/", (req, res) => {
-  res.send("on");
-});
-
 app.post("/sent", (req, res) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
@@ -38,6 +34,10 @@ app.post("/sent", (req, res) => {
       res.send("Mail Sent.");
     }
   });
+});
+
+app.use("/", (req, res) => {
+  res.send("on");
 });
 
 const PORT = process.env.PORT || 3001;
