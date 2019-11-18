@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.post("/sent", (req, res) => {
   const transporter = nodemailer.createTransport({
     host: "smtp.sendgrid.net",
-    port: 465,
+    port: <port>,
     auth: {
       user: "apikey",
       pass: process.env.EMAIL_PASSWORD
@@ -19,8 +19,8 @@ app.post("/sent", (req, res) => {
   });
 
   const mailOptions = {
-    from: '"Portfolio Contact" <paganimatte@gmail.com>',
-    to: "pagani220@gmail.com",
+    from: '"Portfolio Contact" <senderemail@gmail.com>',
+    to: "recipientemail@gmail.com",
     subject: `Porfolio Contact from ${req.body.name}`,
     html: `<h1>Portfolio Contact</h1><p>Name: ${req.body.name}</p><p>Phone Number: ${req.body.number}</p><p>Email: ${req.body.email}</p><h2>Message</h2><p>${req.body.message}</p>`
   };
